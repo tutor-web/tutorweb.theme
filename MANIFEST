@@ -1,0 +1,2 @@
+graft tutorweb.theme
+include *.cfg *.rst *.in LICENSE
