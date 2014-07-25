@@ -28,12 +28,12 @@ setup(
     namespace_packages=['tutorweb'],
     install_requires=[
         'setuptools',
+        'collective.easyslider',
     ],
     extras_require={
         'test': [
             'plone.app.testing',
             'tutorweb.content',
-            'collective.easyslider',
         ],
     },
     entry_points="""
