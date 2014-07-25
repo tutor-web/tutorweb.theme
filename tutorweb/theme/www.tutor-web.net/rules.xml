@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <rules>
+    
+        <theme href="index.html" css:if-content="body.template-folder_tabular_view" />
+        <theme href="index.html" css:if-content="body.template-view" />
+        <theme href="index.html" css:if-content="body.template-search" />
+        <theme href="index.html" css:if-content="body.template-document_view" />
+        
+        
+        <notheme  css:if-content="body.quiz-load"/>
+        <notheme  css:if-content="body.quiz-quiz"/>
+        <notheme  css:if-content="body.quiz-start"/>
+        <notheme  css:if-content="body.page-slide"/>
+        <notheme  if-path="/tutor-web/++resource++tutorweb.quiz"/>
+
+        <!-- Replace title with Plone's page title  -->
+        <replace css:theme="html head title" css:content="html head title" />
+        <!-- Copy base tag from Plone -->
+        <before css:theme-children="html head" css:content="html head base" />
+        <!-- merge classes from Plone body with theme body -->
+        <copy attributes="*" css:theme="body" css:content="body" />
+        <!-- Copy script tags from Plone head to end of body -->
+        <after css:theme-children="html body" css:content="html head script" />
+        <!-- Copy link, style, meta tags from Plone head -->
+        <after css:theme-children="html head" content="/html/head/link | /html/head/style" />
+        
+       
+        <!-- Search for smartphones with screen size undir 640px --> 
+        <replace
+            css:theme="li#search-box"
+            css:content="div#portal-searchbox"
+            />
+          
+        <!-- Search for devices with screen size over 640px -->   
+        <replace
+            css:theme="div#search-box"
+            css:content="div#portal-searchbox"
+            />
+            
+        <!-- "Home" menuitem for smartphones with screen size undir 640px -->    
+        <replace
+            theme="//div[@id='mobile-header']/nav/ul/li[1]/a"
+            css:content="li#portaltab-index_html a"
+            />
+        
+        <!-- "Home" menuitem for devices with screen size over 640px -->   
+        <replace
+            theme="//ul[@id='content_container']/li[1]/a"
+            css:content="li#portaltab-index_html a"
+            />
+            
+        <!-- "Schools and classes" menuitem for smartphones with screen size undir 640px -->  
+        <replace
+            theme="//div[@id='mobile-header']/nav/ul/li[2]/a"
+            css:content="li#portaltab-schools-and-classes a"
+            />
+        
+        <!-- "Schools and classes" menuitem for smartphones with screen size over 640px --> 
+        <replace
+            theme="//ul[@id='content_container']/li[2]/a"
+            css:content="li#portaltab-schools-and-classes a"
+            />
+            
+        <replace 
+            css:theme="#portal-column-content" 
+            css:content="#portal-column-content" 
+            />
+            
+         <!-- Vertical departments navigation --> 
+        <replace
+            css:theme-children="nav.nav-collapse"
+            css:content="ul.navTree"
+            /> 
+         
+        <replace 
+            css:theme="#portal-footer" 
+            css:content="#portal-footer" 
+            />
+            
+        <!-- Login for smartphones with screen size undir 640px -->   
+        <replace 
+            css:theme="#mobile-login" 
+            css:content="div#portal-personaltools-wrapper" 
+            />
+        
+        <!-- Login for devices with screen size over 640px --> 
+        <replace 
+            css:theme="#login" 
+            css:content="div#portal-personaltools-wrapper" 
+            />
+       
+            
+        <drop
+            css:content="input.searchButton"
+            />
+
+        <drop
+            css:content="div.searchSection"
+            />
+           
+        <drop
+            css:content="#portal-breadcrumbs" 
+            css:if-content="body.userrole-manager"  
+            />
+
+        <!-- Drop vertical departments navigation during search--> 
+        <drop
+            css:theme="ul.nav" 
+            css:if-content="body.template-search"
+            /> 
+        
+        <!-- Vertical navigation only contains departments--> 
+        <drop
+            content="//ul[contains(@class, 'navTree')]/li[./a[not(contains(@class, 'contenttype-tw_department'))]]"
+            />
+            
+        <drop
+            css:content="dl.portlet img"
+            />
+
+        </rules>
+</rules>

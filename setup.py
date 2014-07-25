@@ -33,6 +33,7 @@ setup(
         'test': [
             'plone.app.testing',
             'tutorweb.content',
+            'collective.easyslider',
         ],
     },
     entry_points="""

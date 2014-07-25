@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="generator" content="Plone - http://plone.org">
+    <base href="http://mobile.tutor-web.net/front-page"><!--[if lt IE 7]></base><![endif]-->
+        <meta content="Welcome to Tutor Web!" name="description">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+        
+        <link href="css/ui-lightness/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+        <link href="./css/style.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="./css/slider.css">
+        <link rel="stylesheet" type="text/css" media="only screen and (max-width: 700px)" href="./css/mobile.css" />
+        
+        <script type="text/javascript" src="./js/scroll-sneak.js"></script>
+        <script src="./js/responsive-nav.js"></script>
+        <script src="js/jquery-1.10.1.min.js"></script>
+        <script src="js/idangerous.swiper-2.1.min.js"></script>
+        <script src="./js/scroll"></script>
+        
+ 
+    <title>Front Page — tutor-web</title> 
+  </head>
+  
+  <body>
+  
+  
+    <div id="container">
+    
+    <!-- Header for devices with screen size over 640px-->
+        <div id="header">
+            <div id="content_container">
+                <div id="login"></div>
+                <a href='http://www.tutor-web.net'><img id="tutorweb-logo" src="./images/tutorweb-logo.png"/></a>
+                <div id="search-box"></div>
+            </div>
+        </div>
+        
+    <!-- Header for devices with screen size under 640px-->
+    
+        <div id="mobile-header">
+            <div id="mobile-login"></div>
+            <div id="logo-container"><a href="http://www.hi.is" id="logolink">Logo</a></div>
+            <nav class="mobile-menu">
+                <ul class="mobile-menu">
+                    <li><a href="#">Home</a></li>
+			        <li><a href="#">Schools and classes</a></li>
+                    <li><a href="http://www.tutor-web.info">Information</a></li>
+                    <li id="search-box"></li>
+                </ul>
+		        <a href="#" id="pull">Menu</a><p></p>
+    	   </nav>
+        </div>
+        
+        
+        <div id="menubar">
+            <ul id="content_container">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Schools and Classes</a></li>
+                <li><a href="http://www.tutor-web.info">Information</a></li>
+            </ul>
+        </div>
+            
+   <!-- Responsive slider -->  
+                 
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+            
+                <!-- Slide 1 --> 
+                <div class="swiper-slide">
+                    
+                    <!-- Til að skipta um mynd þarf að breyta því sem kemur á eftir images/ í heitið á
+                         nýju myndinni. Hún þarf þá að vera í images möppunni undir sama nafni --> 
+                    <img src="images/background.jpg">
+                    <div class="content-slide">
+                   
+                        <!-- Hér er hægt að breyta titlinum á textanum yfir myndinni  --> 
+                        <div class="slide-text"><p class="title">Velkomin á tutor-web</p><br>
+                    
+                            <!-- Hér er hægt að breyta textanum á takkanum og slóðinni sem farið er á þegar
+                             smellt er á hann --> 
+                            <a class="button" href="http://www.hi.is">Register Now</a>
+                    
+                        
+                        </div>
+                    
+                    </div> 
+                </div>
+                
+                <!-- Slide 2 --> 
+                <div class="swiper-slide ">
+                
+                    <!-- Til að skipta um mynd þarf að breyta því sem kemur á eftir images/ í heitið á
+                          nýju myndinni. Hún þarf þá að vera í images möppunni undir sama nafni --> 
+                    <img src="images/mynd-slider.jpg">
+                        <div class="content-slide">
+          
+                        <!-- Hér er hægt að breyta titlinum á textanum yfir myndinni  -->
+                        <div class="slide-text"><p class="title">Velkomin á tutor-web</p>
+                    
+                            <!-- Hér er hægt að breyta textanum á myndinni -->
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt.</p>
+                        
+                        </div>
+                    </div> 
+                </div> 
+                
+                <!-- Slide 3 --> 
+                <div class="swiper-slide ">
+                    <!-- Til að skipta um mynd þarf að breyta því sem kemur á eftir images/ í heitið á
+                          nýju myndinni. Hún þarf þá að vera í images möppunni undir sama nafni -->         
+                    <img src="images/mynd-slider.jpg">
+                        <div class="content-slide">
+                
+                        <!-- Hér er hægt að breyta titlinum á textanum yfir myndinni  -->        
+                        <div class="slide-text"><p class="title">Velkomin á tutor-web</p>
+                    
+                            <!-- Hér er hægt að breyta textanum á myndinni -->
+                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt.</p>
+                                
+                        </div>
+        
+                    </div> 
+                </div>
+            </div>
+            <div class="pagination"></div>
+        </div>
+  
+        <script>
+            var mySwiper = new Swiper('.swiper-container',{
+                pagination: '.pagination',
+                autoplay: 4000,
+                speed:2000,
+                autoResize:true,
+                paginationClickable: true,
+                onTouchStart : function() {
+                  slideTouched();
+                }
+         })
+    
+            $('.pagination').on('click',function() {
+              mySwiper.stopAutoplay();
+              mySwiper.params.autoplay = 10000;
+              mySwiper.startAutoplay();
+         });
+         var timer = null;
+            function slideTouched(){
+              mySwiper.stopAutoplay();
+              mySwiper.params.autoplay = 10000;
+              mySwiper.startAutoplay();
+         }
+        </script>
+        
+        
+    <!-- SLIDER ends-->
+      
+      
+      
+      
+        <div id="content_container">
+            <div id="vertical-menu">
+                <nav class="nav-collapse">
+                    <ul></ul>
+                </nav>
+            </div>
+            <div id="portal-column-content"></div>
+        </div>
+        
+        <div id="clearfix"></div>
+        <div id="portal-footer"></div>
+    </div>
+    
+    <!-- START OF SCROLL-SNEAK JS-->
+    <script>
+    (function() {
+        var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('vertical-menu').getElementsByTagName('li'), i = 0, len = tabs.length;
+        for (; i < len; i++) {
+            tabs[i].onclick = sneaky.sneak;
+        }
+        tabs = document.getElementById('fieldset-courses').getElementsByTagName('td'), i = 0, len = tabs.length;
+        for (; i < len; i++) {
+            tabs[i].onclick = sneaky.sneak;
+        }
+    
+        tabs = document.getElementById('fieldset-tutorials').getElementsByTagName('td'), i = 0, len = tabs.length;
+        for (; i < len; i++) {
+            tabs[i].onclick = sneaky.sneak;
+        }
+    })();
+    </script>
+    <script>
+    (function() {
+        var sneaky = new ScrollSneak(location.hostname),
+        tabs = document.getElementById('fieldset-lectures').getElementsByTagName('td'), i = 0, len = tabs.length;
+        for (; i < len; i++) {
+            tabs[i].onclick = sneaky.sneak;
+        }
+    })();
+    </script>
+
+    <script>
+    (function() {
+        var sneaky = new ScrollSneak(location.hostname),
+        tabs = document.getElementById('portal-breadcrumbs').getElementsByTagName('a'), i = 0, len = tabs.length;
+        for (; i < len; i++) {
+            tabs[i].onclick = sneaky.sneak;
+        }
+    })();
+    </script>
+    <!-- END OF SCROLL SNEAK JS -->
+
+    <!-- START OF RESPONSIVNAV JS -->
+    <script>
+    var nav = responsiveNav(".nav-collapse");
+    </script>
+    <!-- END OF RESPONSIVNAV JS -->
+
+    <!-- START OF RESPONSIVE SLIDER JS -->
+    <script>
+    	$(function() {
+			var pull 		= $('#pull');
+				menu 		= $('nav ul');
+				menuHeight	= menu.height();
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+	</script>
+    <!-- EDN OF RESPONSIVE SLIDER JS -->
+    
+    </body>
+</html>
