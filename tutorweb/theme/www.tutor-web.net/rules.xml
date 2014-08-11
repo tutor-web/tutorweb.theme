@@ -108,15 +108,13 @@
             
         <replace
             css:theme-children="div#banner-overlays"
-            css:content="#slider > ul > li > p > img"
+            css:content="#content-core h2 img"
             href="./banner-slider"/>
-            
         <replace
             css:theme-children="div#banner-text"
-            css:content="#slider > ul > li > div > *"
+            content="//*[@id='content-core']/div/*[local-name() != 'h2']"
             href="./banner-slider"/>
-       
-            
+
         <drop
             css:content="input.searchButton"
             />

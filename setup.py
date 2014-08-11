@@ -28,7 +28,6 @@ setup(
     namespace_packages=['tutorweb'],
     install_requires=[
         'setuptools',
-        'collective.easyslider',
     ],
     extras_require={
         'test': [
