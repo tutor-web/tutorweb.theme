@@ -29,7 +29,18 @@
         <after css:theme-children="html body" css:content="html head script" />
         <!-- Copy link, style, meta tags from Plone head -->
         <after css:theme-children="html head" content="/html/head/link | /html/head/style" />
-        
+
+        <!-- Replace logo href with plone's -->
+        <copy
+            css:theme="a#portal-logo"
+            css:content="a#portal-logo"
+            attributes="href"
+            />
+        <copy
+            css:theme="a#portal-logo img"
+            css:content="a#portal-logo img"
+            attributes="alt title"
+            />
        
         <!-- Search for smartphones with screen size undir 640px --> 
         <replace
