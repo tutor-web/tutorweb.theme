@@ -19,5 +19,5 @@ The "Tutor-Web theme" needs specific navigation portlets.
 You will also need to create a "banner-slider" page at the root, this should
 contain:
 
-* A background image within a "heading"
-* Text below will go in the header
+* A background image within a "pull quote"
+* Below this, your text. This will sit above the background image.
