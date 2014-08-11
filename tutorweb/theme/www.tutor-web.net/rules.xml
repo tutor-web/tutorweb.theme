@@ -10,6 +10,7 @@
         <theme href="index.html" css:if-content="body.template-view" />
         <theme href="index.html" css:if-content="body.template-search" />
         <theme href="index.html" css:if-content="body.template-document_view" />
+        <theme href="index.html" css:if-content="body.template-logged_out" />
         
         
         <notheme  css:if-content="body.quiz-load"/>
@@ -93,6 +94,16 @@
             css:theme="#login" 
             css:content="div#portal-personaltools-wrapper" 
             />
+            
+        <replace
+            css:theme-children="div#banner-overlays"
+            css:content="#slider > ul > li > p > img"
+            href="./banner-slider"/>
+            
+        <replace
+            css:theme-children="div#banner-text"
+            css:content="#slider > ul > li > div > *"
+            href="./banner-slider"/>
        
             
         <drop

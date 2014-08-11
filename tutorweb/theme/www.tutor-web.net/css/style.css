@@ -179,167 +179,68 @@ input[type=text].searchField:focus{
     border-top: 4px solid #002f42;
 }
 
-/* Slider */
+/* Banner-slider */
 
-.swiper-container{
-    margin:0 auto;
+#banner-overlays img{
+    height:285px;
+    width:100%;
     position:relative;
-    overflow:hidden;
-	-webkit-backface-visibility:hidden;
-	-moz-backface-visibility:hidden;
-	-ms-backface-visibility:hidden;
-	-o-backface-visibility:hidden;
-	backface-visibility:hidden;
-	/* Fix of Webkit flickering */
-	z-index:1;
 }
 
-.swiper-wrapper{
-	position:relative;
-	width:100%;
-	-webkit-transition-property:-webkit-transform, left, top;
-	-webkit-transition-duration:0s;
-	-webkit-transform:translate3d(0px,0,0);
-	-webkit-transition-timing-function:ease;
-	
-	-moz-transition-property:-moz-transform, left, top;
-	-moz-transition-duration:0s;
-	-moz-transform:translate3d(0px,0,0);
-	-moz-transition-timing-function:ease;
-	
-	-o-transition-property:-o-transform, left, top;
-	-o-transition-duration:0s;
-	-o-transform:translate3d(0px,0,0);
-	-o-transition-timing-function:ease;
-	-o-transform:translate(0px,0px);
-	
-	-ms-transition-property:-ms-transform, left, top;
-	-ms-transition-duration:0s;
-	-ms-transform:translate3d(0px,0,0);
-	-ms-transition-timing-function:ease;
-	
-	transition-property:transform, left, top;
-	transition-duration:0s;
-	transform:translate3d(0px,0,0);
-	transition-timing-function:ease;
+#text-container{
+    width:auto;
+    height:auto;
+    position:relative;
 }
 
-.swiper-free-mode > .swiper-wrapper{
-	-webkit-transition-timing-function: ease-out;
-	-moz-transition-timing-function: ease-out;
-	-ms-transition-timing-function: ease-out;
-	-o-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-	margin: 0 auto;
-}
-
-.swiper-slide{
-	float: left;
-}
-
-/* IE10 Windows Phone 8 Fixes */
-.swiper-wp8-horizontal{
-	-ms-touch-action: pan-y;
-}
-
-.swiper-wp8-vertical {
-	-ms-touch-action: pan-x;
-}
-
-.swiper-container{
-    width: 100%;
-    height: 285px;
-    color: #fff;
-    text-align: center;
-    z-index: 1;
-}
-
-.pagination{
-    position: absolute;
-    left: 0;
-    text-align: center;
-    bottom:7px;
-    width: 100%;
-    z-index:300;
-}
-
-.swiper-pagination-switch{
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 10px;
-    background: #CCC;
-    box-shadow: 0px 1px 2px #555 inset;
-    margin: 0 3px;
-    cursor: pointer;
-}
-
-.swiper-active-switch{
-    background: #fff;
-}
-
-.content-slide{
-    position: absolute;
-    top: 0;
-    bottom:0;
-    margin:auto;
-    color: #fff;
-    height:inherit;
-    width:inherit;
-}
-
-.slide-text{
-    position: absolute;
-    top:0;
-    bottom:0;
+#banner-text{
+    position:absolute;
+    top:10%;
+    color:#FFF;
+    width:45%;
     left:0;
     right:0;
-    height:50%;
-    width:50%;
-    max-width:400px;
-    margin:auto;
+    font-family: 'Lato', sans-serif;
     text-align:center;
 }
 
-.title{
-    font-size: 26px;
-    margin-bottom: 10px;
-    text-align:center;
-    color:#3a3b3e;
-    font-family: 'Lato', sans-serif;
-    font-weight:bold;
+.prufa{
+    position:absolute;
+    bottom:0;
 }
 
-.text{
-    font-size: 16px;
-    text-align:center;
-    color:#3a3b3e;
+#banner-text h2{
+    font-size:36px;
+}
+
+#banner-text h3{
+    font-size:28px;
+}
+
+#banner-text p{
+    font-size:16px;
+    color:#f2f2f2;
+    margin-bottom:20px;
+}
+
+#banner-text h2, #banner-text h3{
+    color:#F2f2f2;
+    padding-bottom:5px;
     font-family: 'Lato', sans-serif;
 }
 
-.slide-text a.button{
-    font-size: 14px;
-    padding:10px;
-    color:#FCFCFC;
-    border:1px solid #FCFCFC;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    font-family: 'Lato', sans-serif;
-
+#banner-text a{
+    color:#FFF;
+    border:1px solid #FFF;
+    padding:7px;
+    border-radius:3px; 
 }
 
-.slide-text a.button:hover{
+#banner-text a:hover{
     background-color:#3A87BA;
-    color:#FCFCFC;
-    border:none;
+    border-color:#3A87BA;
 }
 
-.swiper-slide img{
-    width:inherit;
-    height:inherit;
-}
-    
 
 /* Vertical navigation*/
 
@@ -435,16 +336,27 @@ div#content{
     margin-bottom:0;
 }
 
-body.template-search div#portal-column-content{
+body.template-search div#portal-column-content {
     width:100%;
     float:left;
     background:none;
     border:none;
 }
 
-body.template-search div#vertical-menu{
+body.template-logged_out div#portal-column-content, body.template-logged_out div#portal-column-content{
+    width:100%;
+    float:left;
+}
+
+body.template-search div#vertical-menu, body.template-logged_out div#vertical-menu{
     width:0;
     margin:0;
+}
+
+body.template-logged_out h1.documentFirstHeading, body.template-logged_out div.documentDescription{
+    float:left;
+    clear:both;
+    margin-bottom:20px;
 }
 
     /*Courses-tutorials tabs*/
@@ -648,15 +560,25 @@ div#portal-footer p a:hover{
    text-decoration:underline;
 }
 
+/*Adjustment for devices with screen size over 480px*/
 
-/*Adjustment for devices with screen size over 640px*/
+@media screen and (min-width: 480px) {
+    #banner-text{
+        margin:auto;
+    }
+}
 
-@media screen and (min-width: 700px) {
+/*Adjustment for devices with screen size over 701px*/
+
+@media screen and (min-width: 701px) {
     #content_container{
         min-width:500px;
         max-width:90%
     }
     
+    .readmore{
+        display:none;
+    }
     .nav-collapse li{
         width: 25%;
         *width: 24.9%; /* IE7 Hack */
@@ -711,6 +633,22 @@ div#portal-footer p a:hover{
         width:auto;
         margin-bottom:20px;
     }
+    
+    #banner-text{
+        width:60%;
+    }
+}
+
+/*Adjustment for devices with screen size under 800px*/
+
+@media screen and (max-width: 800px) {
+    #banner-text{
+        width:80%;
+    }
+    
+    #text-container{
+        padding-bottom:2%;
+    }
 }
 
 /*Adjustment for devices with screen size over 1500px*/
@@ -719,8 +657,21 @@ div#portal-footer p a:hover{
     #content_container{
         max-width:1300px;
     }
-    .swiper-container{
+    #banner-overlays img{
         height:360px;
+    }
+    
+    #banner-text{
+        top:50px;
+        width:40%;
+    }
+    
+    #menubar li a{
+        font-weight: 700;
+    }
+    
+    div .nav-collapse li a{
+        font-weight:700;
     }
 }
 

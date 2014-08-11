@@ -14,12 +14,7 @@
         <link rel="stylesheet" type="text/css" href="./css/slider.css">
         <link rel="stylesheet" type="text/css" media="only screen and (max-width: 700px)" href="./css/mobile.css" />
         
-        <script type="text/javascript" src="./js/scroll-sneak.js"></script>
         <script src="./js/responsive-nav.js"></script>
-        <script src="js/jquery-1.10.1.min.js"></script>
-        <script src="js/idangerous.swiper-2.1.min.js"></script>
-        <script src="./js/scroll"></script>
-        
  
     <title>Front Page — tutor-web</title> 
   </head>
@@ -63,100 +58,13 @@
             </ul>
         </div>
             
-   <!-- Responsive slider -->  
+   <!-- Banner-slider -->  
                  
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-            
-                <!-- Slide 1 --> 
-                <div class="swiper-slide">
-                    
-                    <!-- Til að skipta um mynd þarf að breyta því sem kemur á eftir images/ í heitið á
-                         nýju myndinni. Hún þarf þá að vera í images möppunni undir sama nafni --> 
-                    <img src="images/background.jpg">
-                    <div class="content-slide">
-                   
-                        <!-- Hér er hægt að breyta titlinum á textanum yfir myndinni  --> 
-                        <div class="slide-text"><p class="title">Velkomin á tutor-web</p><br>
-                    
-                            <!-- Hér er hægt að breyta textanum á takkanum og slóðinni sem farið er á þegar
-                             smellt er á hann --> 
-                            <a class="button" href="http://www.hi.is">Register Now</a>
-                    
-                        
-                        </div>
-                    
-                    </div> 
-                </div>
-                
-                <!-- Slide 2 --> 
-                <div class="swiper-slide ">
-                
-                    <!-- Til að skipta um mynd þarf að breyta því sem kemur á eftir images/ í heitið á
-                          nýju myndinni. Hún þarf þá að vera í images möppunni undir sama nafni --> 
-                    <img src="images/mynd-slider.jpg">
-                        <div class="content-slide">
-          
-                        <!-- Hér er hægt að breyta titlinum á textanum yfir myndinni  -->
-                        <div class="slide-text"><p class="title">Velkomin á tutor-web</p>
-                    
-                            <!-- Hér er hægt að breyta textanum á myndinni -->
-                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt.</p>
-                        
-                        </div>
-                    </div> 
-                </div> 
-                
-                <!-- Slide 3 --> 
-                <div class="swiper-slide ">
-                    <!-- Til að skipta um mynd þarf að breyta því sem kemur á eftir images/ í heitið á
-                          nýju myndinni. Hún þarf þá að vera í images möppunni undir sama nafni -->         
-                    <img src="images/mynd-slider.jpg">
-                        <div class="content-slide">
-                
-                        <!-- Hér er hægt að breyta titlinum á textanum yfir myndinni  -->        
-                        <div class="slide-text"><p class="title">Velkomin á tutor-web</p>
-                    
-                            <!-- Hér er hægt að breyta textanum á myndinni -->
-                            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt.</p>
-                                
-                        </div>
-        
-                    </div> 
-                </div>
-            </div>
-            <div class="pagination"></div>
+        <div id="text-container">
+            <div id="banner-overlays"></div>
+            <div id="banner-text"> </div>
+            <div class ="readmore" id"more" data-text="Close"> Read more</div>
         </div>
-  
-        <script>
-            var mySwiper = new Swiper('.swiper-container',{
-                pagination: '.pagination',
-                autoplay: 4000,
-                speed:2000,
-                autoResize:true,
-                paginationClickable: true,
-                onTouchStart : function() {
-                  slideTouched();
-                }
-         })
-    
-            $('.pagination').on('click',function() {
-              mySwiper.stopAutoplay();
-              mySwiper.params.autoplay = 10000;
-              mySwiper.startAutoplay();
-         });
-         var timer = null;
-            function slideTouched(){
-              mySwiper.stopAutoplay();
-              mySwiper.params.autoplay = 10000;
-              mySwiper.startAutoplay();
-         }
-        </script>
-        
-        
-    <!-- SLIDER ends-->
-      
-      
       
       
         <div id="content_container">
@@ -171,6 +79,9 @@
         <div id="clearfix"></div>
         <div id="portal-footer"></div>
     </div>
+        
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="./js/scroll-sneak.js"></script>
     
     <!-- START OF SCROLL-SNEAK JS-->
     <script>
@@ -216,28 +127,68 @@
     var nav = responsiveNav(".nav-collapse");
     </script>
     <!-- END OF RESPONSIVNAV JS -->
-
-    <!-- START OF RESPONSIVE SLIDER JS -->
+    
+    
+    <!-- START OF MOBILE-MENU JS -->
     <script>
-    	$(function() {
-			var pull 		= $('#pull');
-				menu 		= $('nav ul');
-				menuHeight	= menu.height();
+    
+    $(function() {
+        var pull = $('#pull');
+		    menu = $('nav ul');
+		    menuHeight	= menu.height();
 
-			$(pull).on('click', function(e) {
-				e.preventDefault();
-				menu.slideToggle();
-			});
+	    $(pull).on('click', function(e) {
+	    	e.preventDefault();
+	    	menu.slideToggle();
+	    });
 
-			$(window).resize(function(){
-        		var w = $(window).width();
-        		if(w > 320 && menu.is(':hidden')) {
-        			menu.removeAttr('style');
-        		}
-    		});
-		});
-	</script>
-    <!-- EDN OF RESPONSIVE SLIDER JS -->
+    	$(window).resize(function(){
+         var w = $(window).width();
+                if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+          }
+    	});
+    });
+    
+    </script>
+    <!-- END OF MOBILE-MENU JS -->
+    
+    <!-- START OF READ-MORE LINK JS -->
+    <script>
+    
+    $(".readmore").on("click", function() {
+        var el = $(this);
+        if (el.text() == el.data("text")) {
+            el.text(el.data("text-original"));
+        } else {
+            el.data("text-original", el.text());
+            el.text(el.data("text"));
+        }
+    });
+    
+     if (matchMedia('only screen and (max-width: 700px)').matches) {
+        $('#banner-text p').hide();
+    }
+    
+    $('.readmore').click(function(){
+      $('#banner-text p').toggle();
+  });
+    
+    var mql = window.matchMedia('only screen and (max-width: 700px)');
+
+mql.addListener(function(mql) {
+    if (mql.matches) {
+
+$('#banner-text p').hide();
+
+    } else {
+        $('#banner-text p').show();
+        document.getElementById("more").innerHTML = "Read more";
+    }
+});
+    
+    </script>
+    <!-- END OF READ-MORE LINK JS -->
     
     </body>
 </html>

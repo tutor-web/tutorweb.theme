@@ -196,30 +196,71 @@ input[type=text].searchField:focus{
     color:#FFF;
 }
 
-/*Slider*/
-
-.swiper-container{
-    height:200px;
-}  
-
-.title{
-  font-size: 22px;
-  margin-bottom: 10px;
-  text-align:center;
+#search-field{
+    margin:0;
+    padding:0;
+    float:left;
 }
 
-.slide-text a.button{
-   padding:10px;
-   color:#FCFCFC;
-   border:1px solid #FCFCFC;
-   -webkit-border-radius: 3px;
-   -moz-border-radius: 3px;
-   border-radius: 3px;
+#search-results-bar > dl{
+    display:none;
 }
 
-div.pagination{
-    zoom:1.5;
+#search-field > input{
+    font-size:150% !important;
+    margin-bottom:10px;
+    width:100%;
 }
+
+#search-field{
+    width:100%;
+}
+
+/*Banner-slider*/
+
+#banner-text{
+    width:100%;
+}
+    
+#banner-text p{
+    padding-left:2%;
+    padding-right:2%;
+}
+    
+#banner-text h2{
+    font-size:22px;
+}
+    
+#banner-text h3{
+    font-size:18px;
+}
+    
+#banner-text p{
+    font-size:14px;
+}
+
+
+#text-container{
+    background-color:#0c4266;
+    padding-top:20px;
+}
+#banner-overlays img{ 
+    display:none;
+}
+    
+#banner-text{
+    background-color:#0c4266;
+    position:relative;
+    top:0;
+}
+
+.readmore{
+    color:#3A87BA;
+    font-family: 'Lato', sans-serif;
+    width:100%;
+    text-align:center;
+}
+
 
 /*Vertical navigation*/
 
@@ -389,6 +430,9 @@ div#portal-footer p{
     }
 }
 
+/*Adjustment for smartphones with screen size under 900px*/
+
+
 /*Adjustment for smartphones with screen size under 320px*/
 
 @media only screen and (max-width : 320px){
@@ -413,10 +457,6 @@ div#portal-footer p{
     nav.mobile-menu li a{
         text-indent: 15px;
     }
-    
-    .swiper-container {
-        display:none;
-    } 
     
     input[type=text].searchField:focus{
         padding:5px 20px 5px 52px;
