@@ -57,8 +57,11 @@ div#portal-personaltools-wrapper{
     font-family: 'Lato', sans-serif;
 }
 
+#portal-logo{
+    margin:0em !important;
+}
 #tutorweb-logo{
-    margin-bottom:1%;
+    margin-bottom:12px;
     width:205px;
     height:58px;
 }
@@ -70,6 +73,7 @@ div#portal-searchbox{
     clear:none; 
     margin-top:20px;
     margin-right:1px;
+    margin-bottom:12px;
 }
 
 input#searchGadget{
@@ -202,11 +206,6 @@ input[type=text].searchField:focus{
     right:0;
     font-family: 'Lato', sans-serif;
     text-align:center;
-}
-
-.prufa{
-    position:absolute;
-    bottom:0;
 }
 
 #banner-text h2{
@@ -343,14 +342,21 @@ body.template-search div#portal-column-content {
     border:none;
 }
 
-body.template-logged_out div#portal-column-content, body.template-logged_out div#portal-column-content{
+body.template-search div#portal-column-content, body.template-logged_out div#portal-column-content,
+body.template-login_form div#portal-column-content{
     width:100%;
     float:left;
 }
 
-body.template-search div#vertical-menu, body.template-logged_out div#vertical-menu{
+body.template-search div#vertical-menu, body.template-logged_out div#vertical-menu,
+body.template-login_form div#vertical-menu{
     width:0;
     margin:0;
+}
+
+body.template-search div#portal-breadcrumbs, body.template-logged_out div#portal-breadcrumbs,
+body.template-login_form div#portal-breadcrumbs{
+    display:none;
 }
 
 body.template-logged_out h1.documentFirstHeading, body.template-logged_out div.documentDescription{
@@ -422,7 +428,7 @@ div .listing thead th{
 }
 
 div#content .listing tbody td{
-	padding:6px 6px 6px 6px;
+    padding:6px 6px 6px 6px;
     font-size:14px;
     text-align:left;
     background-color:#FFF;
@@ -674,44 +680,3 @@ div#portal-footer p a:hover{
         font-weight:700;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-
-
-

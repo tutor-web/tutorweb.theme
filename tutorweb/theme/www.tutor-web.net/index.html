@@ -13,8 +13,9 @@
         <link href="./css/style.css" type="text/css" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="./css/slider.css">
         <link rel="stylesheet" type="text/css" media="only screen and (max-width: 700px)" href="./css/mobile.css" />
-        
         <script src="./js/responsive-nav.js"></script>
+        
+        
  
     <title>Front Page — tutor-web</title> 
   </head>
@@ -37,12 +38,12 @@
     
         <div id="mobile-header">
             <div id="mobile-login"></div>
-            <div id="logo-container"><a href="http://www.hi.is" id="logolink">Logo</a></div>
+            <div id="logo-container"><a href="http://mobile.tutor-web.net/" id="logolink">Logo</a></div>
             <nav class="mobile-menu">
                 <ul class="mobile-menu">
                     <li><a href="#">Home</a></li>
 			        <li><a href="#">Schools and classes</a></li>
-                    <li><a href="http://www.tutor-web.info">Information</a></li>
+                    <li><a href="http://www.tutor-web.info" target="_blank">Information</a></li>
                     <li id="search-box"></li>
                 </ul>
 		        <a href="#" id="pull">Menu</a><p></p>
@@ -82,113 +83,34 @@
         
     <script src="js/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="./js/scroll-sneak.js"></script>
+    <script src="./js/custom.js"></script>
     
     <!-- START OF SCROLL-SNEAK JS-->
     <script>
+    
     (function() {
         var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('vertical-menu').getElementsByTagName('li'), i = 0, len = tabs.length;
         for (; i < len; i++) {
             tabs[i].onclick = sneaky.sneak;
         }
-        tabs = document.getElementById('fieldset-courses').getElementsByTagName('td'), i = 0, len = tabs.length;
-        for (; i < len; i++) {
-            tabs[i].onclick = sneaky.sneak;
-        }
-    
-        tabs = document.getElementById('fieldset-tutorials').getElementsByTagName('td'), i = 0, len = tabs.length;
-        for (; i < len; i++) {
-            tabs[i].onclick = sneaky.sneak;
-        }
     })();
-    </script>
-    <script>
+    
     (function() {
-        var sneaky = new ScrollSneak(location.hostname),
-        tabs = document.getElementById('fieldset-lectures').getElementsByTagName('td'), i = 0, len = tabs.length;
+        var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('content-core').getElementsByTagName('a'), i = 0, len = tabs.length;
         for (; i < len; i++) {
             tabs[i].onclick = sneaky.sneak;
         }
     })();
-    </script>
-
-    <script>
+    
     (function() {
-        var sneaky = new ScrollSneak(location.hostname),
-        tabs = document.getElementById('portal-breadcrumbs').getElementsByTagName('a'), i = 0, len = tabs.length;
+        var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('portal-breadcrumbs').getElementsByTagName('a'), i = 0, len = tabs.length;
         for (; i < len; i++) {
             tabs[i].onclick = sneaky.sneak;
         }
     })();
-    </script>
-    <!-- END OF SCROLL SNEAK JS -->
-
-    <!-- START OF RESPONSIVNAV JS -->
-    <script>
-    var nav = responsiveNav(".nav-collapse");
-    </script>
-    <!-- END OF RESPONSIVNAV JS -->
-    
-    
-    <!-- START OF MOBILE-MENU JS -->
-    <script>
-    
-    $(function() {
-        var pull = $('#pull');
-		    menu = $('nav ul');
-		    menuHeight	= menu.height();
-
-	    $(pull).on('click', function(e) {
-	    	e.preventDefault();
-	    	menu.slideToggle();
-	    });
-
-    	$(window).resize(function(){
-         var w = $(window).width();
-                if(w > 320 && menu.is(':hidden')) {
-                menu.removeAttr('style');
-          }
-    	});
-    });
     
     </script>
-    <!-- END OF MOBILE-MENU JS -->
-    
-    <!-- START OF READ-MORE LINK JS -->
-    <script>
-    
-    $(".readmore").on("click", function() {
-        var el = $(this);
-        if (el.text() == el.data("text")) {
-            el.text(el.data("text-original"));
-        } else {
-            el.data("text-original", el.text());
-            el.text(el.data("text"));
-        }
-    });
-    
-     if (matchMedia('only screen and (max-width: 700px)').matches) {
-        $('#banner-text p').hide();
-    }
-    
-    $('.readmore').click(function(){
-      $('#banner-text p').toggle();
-  });
-    
-    var mql = window.matchMedia('only screen and (max-width: 700px)');
-
-mql.addListener(function(mql) {
-    if (mql.matches) {
-
-$('#banner-text p').hide();
-
-    } else {
-        $('#banner-text p').show();
-        document.getElementById("more").innerHTML = "Read more";
-    }
-});
-    
-    </script>
-    <!-- END OF READ-MORE LINK JS -->
-    
+    <!-- END OF SCROLL-SNEAK JS-->
+     
     </body>
 </html>

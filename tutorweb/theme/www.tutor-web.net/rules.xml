@@ -5,12 +5,18 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <rules>
-    
+        
+        <theme href="index.html" css:if-content="body.userrole-member"/>
+        <theme href="index.html" css:if-content="body.userrole-anonymous" />
+        <theme href="index.html" css:if-content="body.template-folder_tabular_view" />
         <theme href="index.html" css:if-content="body.template-folder_tabular_view" />
         <theme href="index.html" css:if-content="body.template-view" />
         <theme href="index.html" css:if-content="body.template-search" />
         <theme href="index.html" css:if-content="body.template-document_view" />
         <theme href="index.html" css:if-content="body.template-logged_out" />
+        <theme href="index.html" css:if-content="body.template-folder_listing"/>
+       
+       
         
         
         <notheme  css:if-content="body.quiz-load"/>
@@ -93,16 +99,16 @@
             css:theme="#portal-footer" 
             css:content="#portal-footer" 
             />
-            
-        <!-- Login for smartphones with screen size undir 640px -->   
-        <replace 
-            css:theme="#mobile-login" 
-            css:content="div#portal-personaltools-wrapper" 
-            />
         
         <!-- Login for devices with screen size over 640px --> 
         <replace 
             css:theme="#login" 
+            css:content="div#portal-personaltools-wrapper" 
+            />
+            
+        <!-- Login for smartphones with screen size undir 640px -->   
+        <replace 
+            css:theme="#mobile-login" 
             css:content="div#portal-personaltools-wrapper" 
             />
             
