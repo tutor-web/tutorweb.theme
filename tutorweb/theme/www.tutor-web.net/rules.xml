@@ -115,11 +115,11 @@
         <replace
             css:theme-children="div#banner-overlays"
             css:content="#content-core blockquote img"
-            href="./banner-slider"/>
+            href="/banner-slider"/>
         <replace
             css:theme-children="div#banner-text"
             content="//*[@id='content-core']/div/*[local-name() != 'blockquote']"
-            href="./banner-slider"/>
+            href="/banner-slider"/>
 
         <drop
             css:content="input.searchButton"
