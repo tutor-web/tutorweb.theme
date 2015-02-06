@@ -34,7 +34,7 @@
         <!-- Copy script tags from Plone head to end of body -->
         <after css:theme-children="html body" css:content="html head script" />
         <!-- Copy link, style, meta tags from Plone head -->
-        <after css:theme-children="html head" content="/html/head/link | /html/head/style" />
+        <after css:theme-children="html head" content="/html/head/link[not(contains(@rel, 'icon'))]|/html/head/style" />
 
         <!-- Replace logo href with plone's -->
         <copy
