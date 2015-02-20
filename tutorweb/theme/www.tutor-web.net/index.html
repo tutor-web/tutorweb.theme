@@ -89,33 +89,6 @@
     <script src="js/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="./js/scroll-sneak.js"></script>
     <script src="./js/custom.js"></script>
-    
-    <!-- START OF SCROLL-SNEAK JS-->
-    <script>
-    
-    (function() {
-        var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('vertical-menu').getElementsByTagName('li'), i = 0, len = tabs.length;
-        for (; i < len; i++) {
-            tabs[i].onclick = sneaky.sneak;
-        }
-    })();
-    
-    (function() {
-        var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('content-core').getElementsByTagName('a'), i = 0, len = tabs.length;
-        for (; i < len; i++) {
-            tabs[i].onclick = sneaky.sneak;
-        }
-    })();
-    
-    (function() {
-        var sneaky = new ScrollSneak(location.hostname), tabs = document.getElementById('portal-breadcrumbs').getElementsByTagName('a'), i = 0, len = tabs.length;
-        for (; i < len; i++) {
-            tabs[i].onclick = sneaky.sneak;
-        }
-    })();
-    
-    </script>
-    <!-- END OF SCROLL-SNEAK JS-->
      
     </body>
 </html>

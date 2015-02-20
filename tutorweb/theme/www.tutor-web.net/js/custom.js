@@ -53,4 +53,13 @@
         $('#banner-text p').hide();
     }
 
+    // Enable ScrollSneak for all links within these id's
+    ['vertical-menu', 'content-core', 'portal-breadcrumbs'].map(function (id) {
+        var sneaky = new ScrollSneak(location.hostname),
+            el = document.getElementById(id);
+        if (el === null) return;
 
+        Array.prototype.map.call(el.getElementsByTagName('a'), function (anchor) {
+            anchor.onclick = sneaky.sneak;
+        });
+    });
