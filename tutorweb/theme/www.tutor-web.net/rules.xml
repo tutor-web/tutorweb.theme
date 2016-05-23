@@ -45,6 +45,11 @@
             css:content="a#portal-logo img"
             attributes="alt title"
             />
+        <copy
+            css:theme="div#logo-container a"
+            css:content="a#portal-logo"
+            attributes="href"
+            />
        
         <!-- Search for smartphones with screen size undir 640px --> 
         <replace
