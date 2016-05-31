@@ -1,4 +1,3 @@
-
     var nav = responsiveNav(".nav-collapse");
     
     // Responsive mobile menu
